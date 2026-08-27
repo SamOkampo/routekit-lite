@@ -1,0 +1,24 @@
+RouteKit Lite 0.1.2 — reproducible test summary
+Run date: 2026-08-27
+Platform: Windows 11
+Python: 3.12.7
+Ren'Py: 8.5.3.26051504
+
+PASSED configuration
+PASSED legacy_and_damaged_save_migration
+PASSED rollback_restores_relationship_state
+PASSED save_load_round_trip
+PASSED relationship_math
+PASSED relationship_screen
+PASSED unlocked_memory_screen
+
+Test suites: 2 | 2 passed | 0 failed
+Test cases: 7 | 7 passed | 0 failed
+Test hooks: 1 | 1 passed | 0 failed
+Assertions: 26 | 26 passed | 0 failed
+Status: PASSED
+
+Command used:
+renpy.py demo test routekit --report-detailed
+
+The executable assertions are defined in demo/game/testcases.rpy.

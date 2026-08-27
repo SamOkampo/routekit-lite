@@ -1,0 +1,23 @@
+ROUTEKIT LITE ASSET LICENSE
+
+Copyright (c) 2026 SamOkampo. All rights reserved.
+
+You may:
+
+1. Use RouteKit Lite in any number of personal or commercial Ren'Py games.
+2. Modify the included source code and interface for use inside those games.
+3. Distribute compiled games that contain RouteKit Lite.
+4. Use RouteKit Lite in projects intended for adult audiences, provided the
+   project and its distribution comply with applicable law and platform rules.
+
+You may not:
+
+1. Sell, sublicense, share, or redistribute RouteKit Lite as source code, as a
+   template, or as part of another asset pack.
+2. Publish a modified version of RouteKit Lite as a competing development tool.
+3. Claim the original RouteKit Lite source or documentation as your own work.
+4. Use RouteKit Lite in unlawful content or in sexual content involving minors,
+   minor-presenting characters, coercion, or exploitation.
+
+RouteKit Lite is provided "as is", without warranty of any kind. The creator is
+not liable for damages arising from its use.

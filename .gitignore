@@ -1,0 +1,12 @@
+*.rpyc
+*.rpymc
+cache/
+saves/
+log.txt
+errors.txt
+traceback.txt
+tmp/
+*.save
+*.bak
+.DS_Store
+Thumbs.db
