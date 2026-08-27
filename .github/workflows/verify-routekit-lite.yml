@@ -1,0 +1,52 @@
+name: Verify RouteKit Lite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: routekit-lite-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  renpy-tests:
+    name: Ren'Py 8.5.3 tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the public source
+        uses: actions/checkout@v4
+
+      - name: Cache the Ren'Py SDK
+        id: renpy-cache
+        uses: actions/cache@v4
+        with:
+          path: .tools/renpy-8.5.3-sdk
+          key: renpy-sdk-8.5.3-linux
+
+      - name: Download Ren'Py 8.5.3
+        if: steps.renpy-cache.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          mkdir -p .tools
+          curl --fail --location --retry 3 \
+            https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2 \
+            --output .tools/renpy-sdk.tar.bz2
+          tar -xjf .tools/renpy-sdk.tar.bz2 -C .tools
+          rm .tools/renpy-sdk.tar.bz2
+
+      - name: Run the public RouteKit Lite suite
+        shell: bash
+        env:
+          SDL_AUDIODRIVER: dummy
+        run: |
+          chmod +x .tools/renpy-8.5.3-sdk/renpy.sh
+          .tools/renpy-8.5.3-sdk/renpy.sh \
+            "$GITHUB_WORKSPACE/demo" \
+            test routekit --report-detailed

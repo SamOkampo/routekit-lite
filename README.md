@@ -1,5 +1,7 @@
 # RouteKit Lite — public Ren'Py tests
 
+[![Verify RouteKit Lite](https://github.com/SamOkampo/routekit-lite/actions/workflows/verify-routekit-lite.yml/badge.svg)](https://github.com/SamOkampo/routekit-lite/actions/workflows/verify-routekit-lite.yml)
+
 This repository makes the complete RouteKit Lite `0.1.2` demo and test suite public so anyone can inspect the implementation and reproduce the results.
 
 RouteKit does not replace Ren'Py variables or introduce a new relationship algorithm. Lite packages the repetitive parts around a one-character relationship route: configuration, value clamping, stages, a reusable screen, scene checks, save migration, and rollback-aware state.
@@ -45,6 +47,8 @@ Test cases : 7 | 7 passed | 0 failed
 Assertions : 26 | 26 passed | 0 failed
 Status: PASSED
 ```
+
+GitHub Actions runs this same public suite on every push and pull request. The badge at the top links to the complete execution history.
 
 The latest recorded run is in [`test-results/renpy-8.5.3-summary.txt`](test-results/renpy-8.5.3-summary.txt), and screenshots created by the screen tests are under [`test-results/screenshots`](test-results/screenshots).
 
