@@ -48,6 +48,18 @@ jobs:
           LIBGL_ALWAYS_SOFTWARE: "1"
         run: |
           chmod +x .tools/renpy-8.5.3-sdk/renpy.sh
+          # The committed visual references are 1600x900 Windows captures.
+          # CI generates fresh Linux captures while the test assertions verify
+          # that the expected screens and controls are present.
+          rm -f demo/tests/screenshots/*.png
           xvfb-run -a .tools/renpy-8.5.3-sdk/renpy.sh \
             "$GITHUB_WORKSPACE/demo" \
             test routekit --report-detailed
+
+      - name: Keep the CI screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: routekit-lite-linux-screenshots
+          path: demo/tests/screenshots/*.png
+          if-no-files-found: error
