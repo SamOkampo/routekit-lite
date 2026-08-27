@@ -45,8 +45,9 @@ jobs:
         shell: bash
         env:
           SDL_AUDIODRIVER: dummy
+          LIBGL_ALWAYS_SOFTWARE: "1"
         run: |
           chmod +x .tools/renpy-8.5.3-sdk/renpy.sh
-          .tools/renpy-8.5.3-sdk/renpy.sh \
+          xvfb-run -a .tools/renpy-8.5.3-sdk/renpy.sh \
             "$GITHUB_WORKSPACE/demo" \
             test routekit --report-detailed
